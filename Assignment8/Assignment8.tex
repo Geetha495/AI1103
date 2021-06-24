@@ -147,16 +147,21 @@ Let $\phi(t)$ be a characteristic function of some random variable.  Then, which
     \item $f(t) = \phi(t+1)$ for all $t \in \mathbb{R}$
 \end{enumerate}
 \section{Solution}
-Let $X$ be the random variable.\\
+\textbf{Properties of a Characteristic function}
+\begin{enumerate}
+\item $\phi_X(t) = E(e^{itX})$
+    \item $\phi_X(t) \times \phi_Y(t) = \phi_{X+Y}(t)$
+    \item   If $Y$  and $-X$ have the same distribution then,  
+    $\phi_Y(t) = \overline{\phi_X(t)}$ \\
+\end{enumerate}
+
+Let $X$ be the given random variable and let $Y$  and $-X$ have the same distribution.
+
 Option 1 :\begin{align*} [\phi_X(t)]^2 &= \phi_X(t)\times\phi_X(t) \\
-                &= \phi_{(X+X)}(t)\\
                 &= \phi_{2X}(t)
 \end{align*}
-Thus, $[\phi(t)]^2$ is a characteristic function of random variable $2X$.\\
-Let $Y$  and $-X$ have the same distribution then 
-\begin{align*}
-    \phi_Y(t) = \overline{\phi_X(t)}
-\end{align*}
+Thus, $[\phi(t)]^2$ is a characteristic function of random variable $2X$.
+
 Option 2 :\begin{align*} |\phi_X(t)|^2 &= \phi_X(t)\times\overline{\phi_X(t)} \\
                 &= \phi_X(t)\times\phi_Y(t) \\
                 &= \phi_{X+Y}(t)
