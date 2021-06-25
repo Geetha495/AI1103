@@ -56,7 +56,8 @@
 
 \hyphenation{op-tical net-works semi-conduc-tor}
 \def\inputGnumericTable{}                                 %%
-
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
 \lstset{
 %language=C,
 frame=single, 
@@ -71,7 +72,9 @@ columns=fullflexible
 \newtheorem{lemma}{Lemma}[section]
 \newtheorem{corollary}[theorem]{Corollary}
 \newtheorem{example}{Example}[section]
-\newtheorem{definition}[problem]{Definition}
+%\newtheorem{proposition}{Proposition}[definition]
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
 
 \newcommand{\BEQA}{\begin{eqnarray}}
 \newcommand{\EEQA}{\end{eqnarray}}
@@ -147,13 +150,23 @@ Let $\phi(t)$ be a characteristic function of some random variable.  Then, which
     \item $f(t) = \phi(t+1)$ for all $t \in \mathbb{R}$
 \end{enumerate}
 \section{Solution}
-\textbf{Properties of a Characteristic function}
+\begin{definition}[Characteristic Function]
+ The function $\phi_X(t) = E(e^{itX})$ is called the characteristic function (cf ) of random variable $X$.
+\end{definition}
+
+\begin{proposition}[Properties of a Characteristic function]
+All cf’s have the following properties:\\
 \begin{enumerate}
-\item $\phi_X(t) = E(e^{itX})$
-    \item $\phi_X(t) \times \phi_Y(t) = \phi_{X+Y}(t)$
-    \item   If $Y$  and $-X$ have the same distribution then,  
-    $\phi_Y(t) = \overline{\phi_X(t)}$ \\
+    \item $\phi(-t) =\overline{\phi(t)}$ (complex conjugate)
+    \item  The characteristic function of  $ -X$ is the complex conjugate $\overline{\phi(t)}$.
 \end{enumerate}
+\end{proposition}
+\begin{proposition}[Cf of sum of independent r.v.’s]
+ If $X$ and $Y$ are independent, then
+ \begin{align*}
+     \phi_{X+Y}(t) = \phi_X(t)\phi_Y(t)
+ \end{align*}
+\end{proposition}
 
 Let $X$ be the given random variable and let $Y$  and $-X$ have the same distribution.
 
