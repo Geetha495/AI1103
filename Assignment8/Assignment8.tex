@@ -172,29 +172,31 @@ All cf’s have the following properties:\\
  \label{prop:Sum_of_independent_cvs}
 \end{proposition}
 Let $X$ be the given random variable and let $Y$  and $-X$ have the same distribution.
-
-Option 1 :\begin{align*} [\phi_X(t)]^2 &= \phi_X(t)\times\phi_X(t) \\
+\begin{enumerate}
+    \item \begin{align*} [\phi_X(t)]^2 &= \phi_X(t)\times\phi_X(t) \\
                 &= \phi_{2X}(t) & & \text{(by  \cref{prop:Sum_of_independent_cvs})}
 \end{align*}
 Thus, $[\phi(t)]^2$ is a characteristic function of random variable $2X$.
 
-Option 2 :\begin{align*} |\phi_X(t)|^2 &= \phi_X(t)\times\overline{\phi_X(t)} \\
+\item \begin{align*} |\phi_X(t)|^2 &= \phi_X(t)\times\overline{\phi_X(t)} \\
                 &= \phi_X(t)\times\phi_Y(t) & & \text{(by  \cref{prop:properties_of_cf})}\\
                 &= \phi_{X+Y}(t)
 \end{align*}
 Thus, $|\phi(t)|^2$ is a characteristic function of random variable $(X+Y)$.\\
 
-Option 3 :\begin{align*} \phi_X(-t) &= E(e^{i(-t)X}) & & \text{(by  \cref{def:characterstic_function})} \\
+\item \begin{align*} \phi_X(-t) &= E(e^{i(-t)X}) & & \text{(by  \cref{def:characterstic_function})} \\
                 &= E(e^{it(-X)}) \\
                 &= E(e^{itY})\\
                 &= \phi_Y(t)
 \end{align*}
 Thus, $\phi(-t)$ is a characteristic function of random variable $Y$.
 
-Option 4 :\begin{align*} \phi_X(t+1) &= E(e^{i(t+1)X})  & & \text{(by  \cref{def:characterstic_function})} \\
+\item \begin{align*} \phi_X(t+1) &= E(e^{i(t+1)X})  & & \text{(by  \cref{def:characterstic_function})} \\
 &= E(e^{itX}\times e^{iX}) 
 \end{align*}
 Thus, $\phi(t+1)$ is a not a characteristic function.\\
+\end{enumerate}
+
 
 Hence, correct options are 1, 2, 3.
 
