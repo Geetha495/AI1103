@@ -28,7 +28,7 @@
 \usepackage[breaklinks=true]{hyperref}
 \usepackage{graphicx}
 \usepackage{tkz-euclide}
-
+\usepackage{cleveref}
 \usetikzlibrary{calc,math}
 \usepackage{listings}
     \usepackage{color}                                            %%
@@ -69,13 +69,14 @@ columns=fullflexible
 \newtheorem{theorem}{Theorem}[section]
 \newtheorem{problem}{Problem}
 \newtheorem{proposition}{Proposition}[section]
+\newtheorem{prop}[theorem]{Proposition}
 \newtheorem{lemma}{Lemma}[section]
 \newtheorem{corollary}[theorem]{Corollary}
 \newtheorem{example}{Example}[section]
 %\newtheorem{proposition}{Proposition}[definition]
 \theoremstyle{definition}
 \newtheorem{definition}{Definition}[section]
-
+\crefalias{prop}{Proposition} %
 \newcommand{\BEQA}{\begin{eqnarray}}
 \newcommand{\EEQA}{\end{eqnarray}}
 \newcommand{\define}{\stackrel{\triangle}{=}}
@@ -152,6 +153,7 @@ Let $\phi(t)$ be a characteristic function of some random variable.  Then, which
 \section{Solution}
 \begin{definition}[Characteristic Function]
  The function $\phi_X(t) = E(e^{itX})$ is called the characteristic function (cf ) of random variable $X$.
+ \label{def:characterstic_function}
 \end{definition}
 
 \begin{proposition}[Properties of a Characteristic function]
@@ -160,35 +162,36 @@ All cf’s have the following properties:\\
     \item $\phi(-t) =\overline{\phi(t)}$ (complex conjugate)
     \item  The characteristic function of  $ -X$ is the complex conjugate $\overline{\phi(t)}$.
 \end{enumerate}
+\label{prop:properties_of_cf}
 \end{proposition}
 \begin{proposition}[Cf of sum of independent r.v.’s]
  If $X$ and $Y$ are independent, then
  \begin{align*}
-     \phi_{X+Y}(t) = \phi_X(t)\phi_Y(t)
+     \phi_{X+Y}(t) = \phi_X(t)\times\phi_Y(t)
  \end{align*}
+ \label{prop:Sum_of_independent_cvs}
 \end{proposition}
-
 Let $X$ be the given random variable and let $Y$  and $-X$ have the same distribution.
 
 Option 1 :\begin{align*} [\phi_X(t)]^2 &= \phi_X(t)\times\phi_X(t) \\
-                &= \phi_{2X}(t)
+                &= \phi_{2X}(t) & & \text{(by  \cref{prop:Sum_of_independent_cvs})}
 \end{align*}
 Thus, $[\phi(t)]^2$ is a characteristic function of random variable $2X$.
 
 Option 2 :\begin{align*} |\phi_X(t)|^2 &= \phi_X(t)\times\overline{\phi_X(t)} \\
-                &= \phi_X(t)\times\phi_Y(t) \\
+                &= \phi_X(t)\times\phi_Y(t) & & \text{(by  \cref{prop:properties_of_cf})}\\
                 &= \phi_{X+Y}(t)
 \end{align*}
 Thus, $|\phi(t)|^2$ is a characteristic function of random variable $(X+Y)$.\\
 
-Option 3 :\begin{align*} \phi_X(-t) &= E(e^{i(-t)X}) \\
+Option 3 :\begin{align*} \phi_X(-t) &= E(e^{i(-t)X}) & & \text{(by  \cref{def:characterstic_function})} \\
                 &= E(e^{it(-X)}) \\
                 &= E(e^{itY})\\
                 &= \phi_Y(t)
 \end{align*}
 Thus, $\phi(-t)$ is a characteristic function of random variable $Y$.
 
-Option 4 :\begin{align*} \phi_X(t+1) &= E(e^{i(t+1)X}) \\
+Option 4 :\begin{align*} \phi_X(t+1) &= E(e^{i(t+1)X})  & & \text{(by  \cref{def:characterstic_function})} \\
 &= E(e^{itX}\times e^{iX}) 
 \end{align*}
 Thus, $\phi(t+1)$ is a not a characteristic function.\\
