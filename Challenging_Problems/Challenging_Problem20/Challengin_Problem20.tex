@@ -156,8 +156,8 @@ Let $X_{1},X_{2},....$ be i.i.d N(1,1) random variables.Let $S_{n}=X_{1}^{2}+X_{
 \begin{definition}[Central moment]
  For a random variable $X$, $E\left[(X-E(X))^r\right]$ is called $r^{th} $ central moment and it is denoted by $\mu_r$.
 \begin{align}
-    \mu_r &= E\left[(X-E(X))^r\right] \nonumber\\
-    &= \sum_{k=0}^r \left(\Comb{4}{k} \times E(X^k) \times (E(X))^k\right)
+    \mu_r &= E\brak{(X-E(X))^r} \nonumber\\
+    &= \sum_{k=0}^r \brak{\Comb{4}{k} \times E(X^k) \times (E(X))^{r-k}}
     \label{eq:2}
 \end{align}
 \end{definition}
