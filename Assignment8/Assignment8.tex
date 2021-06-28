@@ -152,15 +152,15 @@ Let $\phi(t)$ be a characteristic function of some random variable.  Then, which
 \end{enumerate}
 \section{Solution}
 \begin{definition}[Characteristic Function]
- The function $\phi_X(t) = E(e^{itX})$ is called the characteristic function (cf ) of random variable $X$.
+ The function $\phi_X(t) = E\brak{e^{itX}}$ is called the characteristic function (cf ) of random variable $X$.
  \label{def:characterstic_function}
 \end{definition}
 
 \begin{proposition}[Properties of a Characteristic function]
 All cf’s have the following properties:\\
 \begin{enumerate}
-    \item $\phi(-t) =\overline{\phi(t)}$ (complex conjugate)
-    \item  The characteristic function of  $ -X$ is the complex conjugate $\overline{\phi(t)}$.
+    \item $\phi_X(-t) =\overline{\phi_X(t)}$ (complex conjugate)
+    \item  $\phi_{-X}(t) = \overline{\phi_X(t)}$  
 \end{enumerate}
 \label{prop:properties_of_cf}
 \end{proposition}
@@ -184,15 +184,15 @@ Thus, $f(t) = [\phi(t)]^2$ is a characteristic function of random variable $2X$.
 \end{align*}
 Thus, $f(t)=|\phi(t)|^2$ is a characteristic function of random variable $(X+Y)$.\\
 
-\item \begin{align*} \phi_X(-t) &= E(e^{i(-t)X}) & & \text{(by  \cref{def:characterstic_function})} \\
-                &= E(e^{it(-X)}) \\
-                &= E(e^{itY})\\
+\item \begin{align*} \phi_X(-t) &= E\brak{e^{i(-t)X}} & & \text{(by  \cref{def:characterstic_function})} \\
+                &= E\brak{e^{it(-X)}} \\
+                &= E\brak{e^{itY}}\\
                 &= \phi_Y(t)
 \end{align*}
 Thus, $f(t) = \phi(-t)$ is a characteristic function of random variable $Y$.
 
-\item \begin{align*} \phi_X(t+1) &= E(e^{i(t+1)X})  & & \text{(by  \cref{def:characterstic_function})} \\
-&= E(e^{itX}\times e^{iX}) 
+\item \begin{align*} \phi_X(t+1) &= E\brak{e^{i(t+1)X}}  & & \text{(by  \cref{def:characterstic_function})} \\
+&= E\bark{e^{itX}\times e^{iX}} 
 \end{align*}
 Thus, $f(t) = \phi(t+1)$ is a not a characteristic function.\\
 \end{enumerate}
